@@ -4,9 +4,11 @@ body {
   margin: 0;
   padding: 0;
   color: #000;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Profile image responsive sizing */
 .profile-img {
   width: 100%;
   max-width: 400px;
@@ -17,8 +19,8 @@ body {
 }
 
 .name-small {
-  font-size: 0.7em; /* smaller text */
-  color: #333; /* slightly muted color */
+  font-size: 0.7em;
+  color: #333;
 }
 
 .name-highlight {
@@ -27,9 +29,8 @@ body {
   color: #000000;
 }
 
-/* Contact Now button styling */
 .btn-primary {
-  background-color: #e67e22; /* custom orange */
+  background-color: #e67e22;
   border: none;
   padding: 10px 25px;
   font-size: 1.1rem;
@@ -42,21 +43,24 @@ body {
   text-decoration: none;
 }
 
-/* Social media icon footer */
 .social-footer {
-  position: fixed;
-  bottom: 10px;
   width: 100%;
   text-align: center;
-  z-index: 1030;
   background: transparent;
-  padding: 0;
+  padding: 10px 0;
+  position: relative;
+  margin-top: auto;
+  z-index: 1030;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
 }
 
 .social-footer a {
   color: #000;
   font-size: 1.8rem;
-  margin: 0 15px;
   padding: 5px;
   border-radius: 50%;
   background-color: transparent !important;
@@ -71,8 +75,17 @@ body {
   box-shadow: none !important;
   text-decoration: none;
 }
+
 .nav-link.active {
-  color: #ff5733 !important;       
- 
-  border-radius: 5px;            
+  color: #ff5733 !important;
+  border-radius: 5px;
+}
+
+@media (max-width: 576px) {
+  .social-footer {
+    gap: 10px;
+  }
+  .social-footer a {
+    font-size: 1.5rem;
+  }
 }
